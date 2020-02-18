@@ -55,6 +55,9 @@ You need to install `MySQL`, `MariaDB` was used on `Debian 10`. The node `mysql2
 
 You will also need to run the private `createUser` function in `/utils/users` since there isn't a registration aspect to this app yet. You can just run `createUser('username','pass')` while running the node app locally.
 
+### Table seeding
+The `seed-database.js` file should run completely provided you have a working local/remote `MySQL` install with a user which as I mentioned has full privileges or you create the `tagging_tracker` database first then create/assign the user to have full access to that databse. Which you can then use that(put credentials in `.env` file) to run the `seed-database.js` file to make all the tables.
+
 ## Deploying with Systemd
 One way to deploy the node back end is through [systemd](https://www.axllent.org/docs/view/nodejs-service-with-systemd/) a service manager in `Linux`, this takes the place of running the `node` app by `node index.js` directly in terminal. If you go this route, note that when you make changes you will have to reload the daemon i.e. `systemctl daemon-reload` and then restart the service i.e. `systemctl restart nameofservice.service`.
 
@@ -66,7 +69,7 @@ Update with `SET GLOBAL max_allowed_packet=value_in_bytes;`
 Note: the variable shown by the `SHOW...` command will not change, I think because they're not the same e.g. `GLOBAL`. But if you were running into the `ECONNRESET` issue it's probably fixed now, try it. The other alternative is the connection being [terminated](https://stackoverflow.com/questions/22900931/mysql-giving-read-econnreset-error-after-idle-time-on-node-js-server/22906189#22906189) too early but I checked(in Windows 10) and it was set to the default of `28800`.
 
 ## Work in progress
-[link](./TODO.md) to current to do list
+[Link](./TODO.md) to current to do list
 
 ### Live API
 [This link](https://api.byx1a2gixtvvnjwxde5y.com/) is a live API being used by the [ReactJS PWA]() as of 02/17/2020
