@@ -1,3 +1,6 @@
+#### Edit: this is old
+Active repo [here](https://github.com/codeforkansascity/tagging-tracker-pwa-backend)
+
 ## About
 This back-end is built for this [ReactJS PWA](https://github.com/codeforkansascity/tagging-tracker-pwa) primarily used for auth(JWT), S3 upload and data syncing. The data sync eg. the address/tag-info/owner-info tables are held in `MySQL` and photos are stored in S3.
 
